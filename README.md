@@ -1,4 +1,4 @@
-# 🚀 Financial Copilot - 智能金融投研助手
+# 🚀 Personal Copilot - 智能助手
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![LangChain](https://img.shields.io/badge/LangChain-0.1-green)
@@ -46,3 +46,5 @@ python main.py
 ```py
 streamlit run app.py
 ```
+### 5. 效果图
+<img width="1851" height="1080" alt="image" src="https://github.com/user-attachments/assets/feaa148d-4171-40d7-aa83-9c4167f89acb" />
