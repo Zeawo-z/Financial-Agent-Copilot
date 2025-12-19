@@ -47,4 +47,5 @@ python main.py
 streamlit run app.py
 ```
 ### 5. 效果图
-<img width="1851" height="1080" alt="image" src="https://github.com/user-attachments/assets/feaa148d-4171-40d7-aa83-9c4167f89acb" />
+<img width="2421" height="1371" alt="image" src="https://github.com/user-attachments/assets/220a8ed3-5417-451a-937a-6f590d432901" />
+
