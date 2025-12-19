@@ -53,6 +53,32 @@ with st.sidebar:
             st.success("上传成功")
 
     st.divider()
+    st.subheader("📈 市场观察")
+    ticker_input = st.text_input("输入股票代码", value="AAPL")
+    if st.button("生成K线图"):
+        try:
+            with st.spinner("正在加载数据..."):
+                # 获取历史数据
+                stock = yf.Ticker(ticker_input)
+                # 获取最近 3 个月数据
+                hist = stock.history(period="3mo")
+
+                if not hist.empty:
+                    st.success(f"{ticker_input} 近3个月走势")
+                    # Streamlit 自带的折线图，非常丝滑
+                    st.line_chart(hist['Close'])
+
+                    # 显示涨跌幅
+                    current = hist['Close'].iloc[-1]
+                    start = hist['Close'].iloc[0]
+                    delta = ((current - start) / start) * 100
+                    st.metric("区间涨跌幅", f"{delta:.2f}%", f"{current:.2f}")
+                else:
+                    st.error("未获取到数据，请检查代码是否正确")
+        except Exception as e:
+            st.error(f"绘图失败: {e}")
+
+    st.divider()
     st.button("🗑️ 清空记录", on_click=clear_history)
     check_stream = st.checkbox("流式输出", value=True)
 
